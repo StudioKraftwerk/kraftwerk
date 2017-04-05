@@ -1,0 +1,47 @@
+* {
+	padding: 0;
+	margin: 0;
+	background: #191f2a;
+}
+
+.content-centered {
+	margin: 0 auto;
+	width: 1024px;
+}
+
+.logo-shcc {
+	margin: 30px auto 0;
+	width: 141px;
+	height: 42px;
+	display: block;
+}
+
+.title {
+	margin: 225px auto 30px;
+	width: 288px;
+	height: 78px;
+	background: url(../img/inferior-browser/title.png);
+}
+
+.intro {
+	margin: 0 auto 55px;
+	width: 852px;
+	height: 85px;
+	background: url(../img/inferior-browser/intro-text.png);
+	display: block;
+}
+
+.download-chrome {
+	margin: 0 auto 0;
+	width: 119px;
+	height: 179px;
+	background: url(../img/inferior-browser/chrome-browser-icon.png);
+	display: block;
+}
+
+.ir {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+

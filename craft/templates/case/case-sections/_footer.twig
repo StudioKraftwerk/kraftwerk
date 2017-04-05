@@ -1,0 +1,36 @@
+<footer class="section case-footer">
+
+    {% include "partials/_ui-overlay" with {color: 'white', title: "work / #{entry.title}"} %}
+
+    <a href="/" class="button case-footer-button button-case-footer button-case-footer--previous clearfix" data-index="0">
+        <figure class="case-footer-button-background case-footer-button-background--previous"></figure>
+        <div class="case-footer-button-overlay"></div>
+
+        <div class="case-footer-button-column case-footer-button-column--previous">
+            <div class="case-footer-button-content case-footer-button-content--previous">
+                <h3 class="case-footer-button-content-title case-footer-button-content-title--previous"></h3>
+                <dl class="list case-footer-button-content-client">
+                    <dt class="dl-key">Client</dt>
+                    <dd class="dl-value case-footer-button-content-client--previous"></dd>
+                </dl>
+            </div>
+            <canvas class="case-footer-sprite-animation-arrow case-footer-sprite-animation-arrow--prev" data-color="white"></canvas>
+        </div>
+    </a>
+
+    <a href="/" class="button case-footer-button button-case-footer button-case-footer--next clearfix" data-index="1">
+        <figure class="case-footer-button-background case-footer-button-background--next"></figure>
+        <div class="case-footer-button-overlay"></div>
+
+        <div class="case-footer-button-column case-footer-button-column--next">
+            <div class="case-footer-button-content case-footer-button-content--next">
+                <h3 class="case-footer-button-content-title case-footer-button-content-title--next"></h3>
+                <dl class="list case-footer-button-content-client">
+                    <dt class="dl-key">Client</dt>
+                    <dd class="dl-value case-footer-button-content-client--next"></dd>
+                </dl>
+            </div>
+            <canvas class="case-footer-sprite-animation-arrow case-footer-sprite-animation-arrow--next"></canvas>
+        </div>
+    </a>
+</footer>

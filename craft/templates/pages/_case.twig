@@ -1,0 +1,77 @@
+{% if entry.type == 'homepage' %}
+    {% set entry = craft.entries.section('case').first() %}
+{% endif %}
+
+{% set featuredCases = craft.entries.section('case') %}
+
+<div class="case-header-container">
+
+    <header class="case-header">
+
+        {% include "partials/_ui-overlay" with {color: 'white', title: "work / #{entry.title}"} %}
+
+        <div class="case-header-gallery">
+            <canvas class="case-header-background" width="600" height="600"></canvas>
+
+            <ul class="list is-horizontal case-header-list">
+                {% for case in featuredCases %}
+                    {% include "partials/_case-header-item" with {case: case} %}
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <a class="button button-switch-case button-switch-case--previous">
+            <div class="button-switch-case-inner button-switch-case-inner--previous">
+                <i class="arrow-left button-switch-case-icon button-switch-case-icon--previous"></i>
+                <span class="button-switch-case-label button-switch-case-label--previous">Previous case</span>
+            </div>
+        </a>
+
+        <a class="button button-switch-case button-switch-case--next">
+            <div class="button-switch-case-inner button-switch-case-inner--next">
+                <i class="arrow-right button-switch-case-icon button-switch-case-icon--next"></i>
+                <span class="button-switch-case-label button-switch-case-label--next">Next case</span>
+            </div>
+        </a>
+
+        <div class="paginator case-paginator">
+            <ul class="list is-horizontal case-header-paginator">
+                {% for case in featuredCases %}
+                    <li class="list-item list-item-paginator">
+                        <a class="button button-paginator button-paginator--white" data-index="{{ loop.index0 }}">
+                            <span class="button-paginator-active-indicator"></span>
+                            <span class="button-paginator-label"></span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </header>
+
+    <div class="case-header-metadata">
+        <div class="grid">
+            <div class="case-header-metadata-background span-8-10 span-md-10-10 gutter-l-1-10 gutter-r-1-10 gutter-l-md-none gutter-r-md-none"></div>
+
+            <div class="column case-header-metadata-column span-3-10 span-sm-5-10 gutter-l-1-10 pad-l-1-10 gutter-l-md-none">
+                <h2 class="case-header-metadata-key">Client</h2>
+                <h1 class="case-header-metadata-value case-header-metadata-value-client">{{ entry.client }}</h1>
+            </div>
+            <div class="column case-header-metadata-column span-2-10 span-md-3-10 span-sm-5-10">
+                <h2 class="case-header-metadata-key">Project</h2>
+                <h1 class="case-header-metadata-value case-header-metadata-value-project-type">{{ entry.projectType }}</h1>
+            </div>
+            <div class="column case-header-metadata-column case-header-metadata-column--last span-3-10 pad-r-1-10 span-md-4-10 gutter-l-md-none">
+                <a href="" target="_blank" class="button button-primary button-primary--dark case-header-metadata-button">
+                    <span class="button-primary-label button-primary-label--dark button-primary-label-background case-header-metadata-button-label"></span>
+                    <figure class="button-primary-background"></figure>
+                    <span class="button-primary-label button-primary-label--light button-primary-label-foreground case-header-metadata-button-label"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="case-content"></div>

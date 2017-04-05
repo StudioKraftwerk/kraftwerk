@@ -1,0 +1,19 @@
+{% for block in entry.caseSections %}
+    {% switch block.type %}
+        {% case "textFullWidth" %}
+            {% include "case-sections/_text-full-width" %}
+        {% case "largeImage" %}
+            {% include "case-sections/_large-image" %}
+        {% case "textTwoColumns" %}
+            {% include "case-sections/_text-two-columns" %}
+        {% case "video" %}
+            {% include "case-sections/_video" %}
+        {% case "textWithImage" %}
+            {% include "case-sections/_text-with-image" %}
+        {% case "imageGallery" %}
+            {% include "case-sections/_image-gallery" %}
+    {% endswitch %}
+{% endfor %}
+
+{% include "case-sections/_metadata" %}
+{% include "case-sections/_footer" %}

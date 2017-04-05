@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Inferior Browser</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/png" href="../static/img/favicon.ico">
+
+    {% if ((craft.config.minifiedResources is defined) and (craft.config.minifiedResources == '1')) %}
+        <!-- Minified resources included -->
+        <link rel="stylesheet" href="{{ siteUrl }}static/css/main.min.css?cb={{ craft.config.cacheBuster }}">
+    {% else %}
+        <!-- Non minified resources included -->
+        <link rel="stylesheet" href="{{ siteUrl }}static/css/main.css?cb={{ craft.config.cacheBuster }}">
+    {% endif %}
+
+</head>
+<body class="page-inferior">
+<a href="/"><img class="page-inferior__logo" src="../static/img/page-inferior/logo.png" width="190" height="34"></a>
+<section class="section-inferior">
+    <img class="page-inferior__title" width="407" height="44" src="../static/img/page-inferior/title.png"></img>
+
+    <img class="section-inferior-paragraph" width="430" height="107" src="../static/img/page-inferior/intro-text.png" >
+    <a href="http://www.google.com/chrome/browser/" target="_blank"><img class="page-inferior__chrome-logo" width="120" height="120" src="../static/img/page-inferior/chrome-browser-icon.png"></a>
+
+</section>
+</body>
+</html>

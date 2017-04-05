@@ -1,0 +1,47 @@
+<section class="section section-metadata section-padding-top--big section-padding-bottom--big">
+
+    {% include "partials/_ui-overlay" with {color: 'black', title: "work / #{entry.title}"} %}
+
+    {% if entry.honours.total() %}
+        <div class="grid grid-honours">
+            <div class="column span-6-10 gutter-l-2-10 gutter-r-2-10 span-md-8-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h2 class="h2 metadata-title">Honours</h2>
+                <ul class="list is-horizontal honours-list">
+                    {% for honour in entry.honours %}
+                        <li class="list-item honours-list-item">
+                            <figure class="honours-list-item-logo-container">
+                                <img src="{{ honour.logo.first().getUrl() }}" class="honours-list-item-logo">
+                            </figure>
+                            <span class="honours-list-item-title">{{ honour.honourName }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="grid">
+        {% if entry.credits.total() %}
+            <div class="column span-2-10 gutter-l-2-10 span-md-3-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h2 class="h2 metadata-title">Credits</h2>
+                <dl class="list list-metadata--credits">
+                    {% for item in entry.credits %}
+                        <dt class="dl-key">{{ item.role }}</dt>
+                        <dd class="dl-value">{{ item.contributorName }}</dd>
+                    {% endfor %}
+                </dl>
+            </div>
+        {% endif %}
+        {% if entry.roles.total() %}
+            <div class="column span-3-10 gutter-l-1-10 span-md-4-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h2 class="h2 metadata-title">Role</h2>
+                <ul class="list is-horizontal list-metadata list-metadata--role">
+                    {% for role in entry.roles %}
+                        <li class="list-item list-item--metadata list-item--role">{{ role.role }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+</section>

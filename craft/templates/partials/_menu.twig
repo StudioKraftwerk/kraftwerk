@@ -1,0 +1,56 @@
+<nav class="menu">
+    {% include "partials/_ui-overlay" with {color: 'white'} %}
+
+    <figure class="menu-background-color"></figure>
+    <!-- <canvas class="menu-background"></canvas> -->
+
+    <ol class="list-menu">
+        <li class="list-item list-item-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+                <defs>
+                    <filter id="button-menu-filter--work">
+                        <feTurbulence type="fractalNoise" baseFrequency="0 0" numOctaves="1" result="warp" class="button-menu-filter-turbulence"></feTurbulence>
+                        <feOffset dx="-90" dy="-90" result="warpOffset"></feOffset>
+                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+            <a class="button button-menu button-menu--work" href="/work" data-index="0">
+                <span class="button-menu-copy">Work</span>
+                <hr class="button-menu-line button-menu-line--work">
+            </a>
+        </li>
+        <li class="list-item list-item-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+                <defs>
+                    <filter id="button-menu-filter--about">
+                        <feTurbulence type="fractalNoise" baseFrequency="0 0" numOctaves="1" result="warp" class="button-menu-filter-turbulence"></feTurbulence>
+                        <feOffset dx="-90" dy="-90" result="warpOffset"></feOffset>
+                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+            <a class="button button-menu button-menu--about" href="/about" data-index="1">
+                <span class="button-menu-copy">About</span>
+                <hr class="button-menu-line button-menu-line--about">
+            </a>
+        </li>
+        <li class="list-item list-item-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
+                <defs>
+                    <filter id="button-menu-filter--contact">
+                        <feTurbulence type="fractalNoise" baseFrequency="0 0" numOctaves="1" result="warp" class="button-menu-filter-turbulence"></feTurbulence>
+                        <feOffset dx="-90" dy="-90" result="warpOffset"></feOffset>
+                        <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warpOffset"></feDisplacementMap>
+                    </filter>
+                </defs>
+            </svg>
+            <a class="button button-menu button-menu--contact" href="/contact" data-index="2">
+                <span class="button-menu-copy">Contact</span>
+                <hr class="button-menu-line button-menu-line--contact">
+            </a>
+        </li>
+    </ol>
+
+    <a href="http://www.achtung.nl" target="_blank" class="button button-menu-footer">POWERED BY <span class="button-menu-footer-icon"><svg x="0px" y="0px" viewBox="0 0 12 30"><g><path class="button-menu-footer-icon-svg" d="M6,0v12.9l-6-1.7L6,30V17.1l6,1.7L6,0z" fill="white"/></g></svg></span> ACHTUNG!</a>
+</nav>

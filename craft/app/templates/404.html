@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>404 - Page not found</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" >
+    <link rel="icon" type="image/png" href="../static/img/favicon.ico">
+
+    <?php if (App::environment('local', 'development')): ?>
+            <!-- Non minified resources included -->
+            <link rel="stylesheet" href="/static/css/main.css?cb=<?=Config::get('custom.cache_buster')?>">
+    <?php elseif (App::environment('staging', 'production')): ?>
+            <!-- Minified resources included -->
+            <link rel="stylesheet" href="/static/css/main.min.css?cb=<?=Config::get('custom.cache_buster')?>">
+    <?php endif; ?>
+
+</head>
+<body class="page-not-found">
+    <section class="section-404">
+        <h1 class="section-404-logo">
+          	<img class="section-404-logo-visual" width="821" height="141" src="/static/img/logos/kraftwerk-logo.png" alt="Kraftwerk"/>
+        </h1>
+        <p class="section-404-paragraph">Whoops, seems like this page is not found.</p>
+
+    </section>
+
+    <span class=" page-404-side-title page-side-title">Powered by Achtung!</span>
+
+</body>
+</html>

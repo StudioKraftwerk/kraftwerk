@@ -1,0 +1,13 @@
+{% if not craft.kraftwerk.isMobile %}
+    <div class="ui-overlay ui-overlay--{{ color }}">
+        <a href="/intro" class="button button-main-logo ir"><img src="/static/img/logo-{{ color }}.png" width="113" height="20"/></a>
+
+        {% if title is defined %}
+            <h3 class="page-side-title">{{ title }}</h3>
+        {% endif %}
+
+    	<a class="button button-main-menu">
+            <canvas class="button-main-menu-icon" width="50" height="50" data-color="{{ color }}"></canvas>
+        </a>
+    </div>
+{% endif %}

@@ -1,0 +1,45 @@
+{% set entry = craft.entries.section('work').first() %}
+{% include "partials/_ui-overlay" with {color: 'white', title: 'Work'} %}
+
+<h1 class="h1 page-title page-work-title">Selected&nbsp;cases</h1>
+
+<div class="grid grid-projects">
+
+    {% for entry in craft.entries.section('case') %}
+
+        {% set type = loop.index0 % 2 == 0 ? 'even' : 'odd' %}
+
+        <div class="project project--{{ type }} column span-8-10 gutter-l-1-10 gutter-r-1-10 span-s-10-10">
+            <div class="project-content">
+                <a href="/{{ entry.uri }}">
+                    <figure class="project-image" style="background-image:url({{ entry.image.first().url }});"></figure>
+                </a>
+
+                <a href="/{{ entry.uri }}" class="project-link" data-index="{{ loop.index0 }}">
+                    <span class="project-link-title">{{ entry.title }}</span>
+                    <h2 class="project-link-description">{{ entry.heading }}</h2>
+
+                    <span class="project-link-client-title">Client</span>
+                    <span class="project-link-client">{{ entry.client }}</span>
+
+                    <canvas class="sprite-animation-arrow project-link-arrow" data-color="black"></canvas>
+                </a>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+<a class="button-bare page-work__arrow-up"><i class="icon arrow-up"></i></a>
+<div class="case-index">
+    <ul class="case-index-list">
+        {% for entry in craft.entries.section('case') %}
+            <li class="list-item list-item-section-indicator">
+                <a class="button section-indicator-button" data-index="{{ loop.index0 }}">
+                    <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                    <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                    <span class="label section-indicator-label">{{ entry.title }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

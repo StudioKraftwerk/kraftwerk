@@ -1,0 +1,79 @@
+#!/usr/bin/perl
+use strict;
+
+our $env = $ARGV[0];
+
+# Latest database version (without file path):
+our $latest_database = "studio-kraftwerk_170327_122539_v2.6.2776.sql";
+
+
+die("Please add environment as parameter: ./setup ENV") unless $env;
+
+if($env eq "local") {
+    print "Running local setup\n";
+
+    # Doing some local cleanup
+    system("find -name \"._*\" -exec rm -rf {} \\;");
+
+     # Replace [dbname] with the name of the database
+    system("./setup-db kraftwerk");
+    # This script can be run every time, as it detects if the database exists
+    # It can be useful to keep this in as this enables new developers
+    # to join anytime
+
+    # Setting the owners. This has to run every time with setup as the
+    # owner may change when some scripts are run (like composer scripts
+    print "Setting the right ownership for folders.\n";
+    system("sudo chmod -R 774 ./craft/app");
+    system("sudo chmod -R 774 ./craft/config");
+    system("sudo chmod -R 774 ./craft/storage");
+
+    system("php composer.phar self-update");
+    system("php composer.phar install");
+
+    system("mysql -h localhost -u root kraftwerk < ./craft/storage/backups/".$latest_database);
+    print "Craft cms database imported!\n";
+
+}
+
+if($env eq "development") {
+
+    print "Running develoment setup\n";
+
+    # Setting the owners. This has to run every time with setup as the
+    # owner may change when some scripts are run (like composer scripts
+    print "Setting the right ownership for folders.\n";
+    system("sudo chmod -R 774 ./craft/app");
+    system("sudo chmod -R 774 ./craft/config");
+    system("sudo chmod -R 774 ./craft/storage");
+
+    # system("mysql --host=localhost --user=v151_kraftwerk --password=uFk8GsyUC0fx v151_studiokraftwerk < ./craft/storage/backups/".$latest_database);
+    # print "Craft cms database imported!\n";
+}
+
+if($env eq "staging") {
+    print "Running staging setup\n";
+
+    # Setting the owners. This has to run every time with setup as the
+    # owner may change when some scripts are run (like composer scripts
+    print "Setting the right ownership for folders.\n";
+    system("sudo chmod -R 774 ./craft/app");
+    system("sudo chmod -R 774 ./craft/config");
+    system("sudo chmod -R 774 ./craft/storage");
+
+}
+
+if($env eq "production") {
+    print "Running production setup\n";
+
+    # Setting the owners. This has to run every time with setup as the
+    # owner may change when some scripts are run (like composer scripts
+    print "Setting the right ownership for folders.\n";
+    system("chmod -R 774 ./craft/app");
+    system("chmod -R 774 ./craft/config");
+    system("chmod -R 775 ./craft/storage");
+    system("chmod -R 775 ./public/content");
+
+}
+
+print "All done!\n\n";

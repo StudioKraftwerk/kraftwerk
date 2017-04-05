@@ -1,0 +1,14 @@
+<section class="section section-video section-padding-top--{{ block.paddingTop }} section-padding-bottom--{{ block.paddingBottom }}" style="background-color: {{ block.backgroundColor }}; {% if (block.backgroundImage.first()) %} background-image: url({{ block.backgroundImage.first().url }}) {% endif %}">
+
+    {% include "partials/_ui-overlay" with {color: block.uiColor, title: "work / #{entry.title}"} %}
+
+    <div class="grid section-video-grid" data-animation-offset="0">
+        <div class="column section-video-column span-8-10 gutter-l-1-10 span-sm-8-10 gutter-l-sm-1-10">
+            <figure class="section-video-cover" style="background-image: url({{ block.coverImage.first().url }})"></figure>
+            <button class="button button-video button-video--play section-video-controls-button" title="Play"><i class="icon icon-play"></i></button>
+            <div class="section-video-container" data-vimeo-id="{{ block.vimeoId }}"></div>
+            <div class="section-video-pause-overlay"></div>
+        </div>
+    </div>
+
+</section>

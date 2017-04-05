@@ -1,0 +1,24 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+{# Determine the type of template #}
+{% if hasLayout is not defined %}
+    {% set hasLayout = craft.request.isAjax != true %}
+{% endif %}
+
+{% set layout = "layouts/format/html" %}
+
+{% extends layout %}
+
+{# Prepare the page content #}
+{% set rawContent %}
+    {% block content %}{% endblock %}
+{% endset %}

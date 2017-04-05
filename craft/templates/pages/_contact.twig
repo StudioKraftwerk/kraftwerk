@@ -1,0 +1,54 @@
+{% set entry = craft.entries.section('contact').first() %}
+{% include "partials/_ui-overlay" with {color: 'white', title: 'Contact'} %}
+
+<div class="page-contact-background"></div>
+
+<div class="grid grid--contact">
+
+    <div class="wrapper-contact">
+        <div class="column span-8-10 span-sm-6-10">
+            <h1 class="page-title page-title--contact">
+                <a href="mailto:hello@studiokraftwerk.com" class="button contact-button">
+                    <span class="breakpoint-contact-button">hello@</span><span class="breakpoint-contact-button">studio</span><span class="breakpoint-contact-button">kraftwerk</span><span class="breakpoint-contact-button">.com</span>
+                </a>
+            </h1>
+        </div>
+
+        <div class="column span-8-10 span-sm-8-10 page-contact__section--bottom">
+
+            <div class="page-contact-details">
+                <address class="address">
+                    <a href="https://goo.gl/maps/9T61w" target="_blank">Prins Hendrikkade 21-2 <i class="icon arrow-right"></i><br>
+                        1012TL Amsterdam, The Netherlands</a><br>
+                </address>
+                <a href="tel:+31(0)206232696" class="phone">+31 (0)20 623 26 96</a>
+            </div>
+
+            <ul class="list is-horizontal list--social">
+                <li class="list-item list-item--social">
+                    <a href="https://twitter.com/studiokraftwerk" target="_blank" class="link-social">
+                        <i class="icon icon-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-item list-item--social">
+                    <a href="https://www.facebook.com/studiokraftwerk" target="_blank" class="link-social">
+                        <i class="icon icon-facebook"></i>
+                    </a>
+                </li>
+                <!--
+                <li class="list-item list-item--social">
+                    <a href="https://www.instagram.com/studiokraftwerk" target="_blank" class="link-social">
+                        <i class="icon icon-instagram"></i>
+                    </a>
+                </li>
+                -->
+                <li class="list-item list-item--social">
+                    <a href="https://www.linkedin.com/company/studio-kraftwerk" target="_blank" class="link-social">
+                        <i class="icon icon-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

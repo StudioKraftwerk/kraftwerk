@@ -1,0 +1,22 @@
+{
+    "name": "Kraftwerk",
+    "description": "",
+    "version": "0.0.1",
+    "keywords": [],
+    "config": {
+        "preferred-install": "dist"
+    },
+    "require": {
+        "jenssegers/agent": "~2.0",
+        "hashids/hashids": "^1.0",
+        "dbtlr/php-airbrake": "^1.1"
+    },
+    "require-dev": {},
+        "autoload": {
+        "psr-4": {
+            "Airbrake\\": "Airbrake/"
+        }
+    },
+    "scripts": {},
+    "minimum-stability": "dev"
+}

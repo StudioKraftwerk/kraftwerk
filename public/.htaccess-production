@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+ 	RewriteBase /
+ 	 # Redirect http to https
+ 	RewriteCond %{HTTPS} off
+    # Redirect to the secure version
+    RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Exclude root files
+    RewriteCond $1 !^(favicon\.ico|favicon\.png|fb_share\.jpg|apple-touch-icon\.png|apple-touch-icon-precomposed\.png|index\.php|robots\.txt) [NC]
+
+    # Exclude asset folders
+    RewriteCond $1 !^(content|static|assets|uploads)/ [NC]
+
+    # Remove index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+
+AuthName "Restricted area"
+AuthUserFile /data/web/achtung/new-studiokraftwerk.com/.htpasswd
+AuthGroupFile /dev/null
+AuthType Basic
+
+require valid-user

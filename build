@@ -1,0 +1,3 @@
+#!/bin/bash
+cd _tools/build
+grunt build

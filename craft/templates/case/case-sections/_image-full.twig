@@ -1,0 +1,9 @@
+<section class="section section-image-full">
+
+    {% include "partials/_ui-overlay" with {color: block.uiColor, title: "work / #{entry.title}"} %}
+
+    {% if (block.image.first()) %}
+        <img src="{{ block.image.first().url }}" class="section-image-full-image"  data-animation-offset="0">
+    {% endif %}
+
+</section>

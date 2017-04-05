@@ -1,0 +1,31 @@
+<section class="section section-text-with-image section-padding-top--{{ block.paddingTop }} section-padding-bottom--{{ block.paddingBottom }}" style="color: {{ block.textColor }}; background-color: {{ block.backgroundColor }}; {% if (block.backgroundImage.first()) %} background-image: url({{ block.backgroundImage.first().url }}) {% endif %}">
+
+    {% include "partials/_ui-overlay" with {color: block.uiColor, title: "work / #{entry.title}"} %}
+
+    <!-- <figure class="section-background-diagonal"></figure> -->
+
+    <div class="grid center">
+
+        {% if block.imagePosition == 'right' %}
+            <div class="column section-text-with-image-column span-3-10 gutter-l-2-10 span-md-3-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10" data-animation-offset="0">
+                <h1 class="h1 section-text-title">{{ block.heading }}</h1>
+                <p class="p section-text-intro">{{ block.intro }}</p>
+                <p class="p section-text-body">{{ block.body }}</p>
+            </div>
+            <div class="column section-text-with-image-column section-text-with-image-column--text-right span-3-10 gutter-l-1-10 span-md-4-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10" data-animation-offset="0.1">
+                <img src="{{ block.image.first().url }}" class="section-image-text-image">
+            </div>
+        {% else %}
+            <div class="column section-text-with-image-column span-3-10 gutter-l-1-10 gutter-r-1-10 span-md-3-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10" data-animation-offset="0">
+                <img src="{{ block.image.first().url }}" class="section-image-text-image">
+            </div>
+            <div class="column section-text-with-image-column span-3-10 gutter-r-1-10 span-md-4-10 gutter-r-md-1-10 span-sm-8-10 gutter-l-sm-1-10" data-animation-offset="0.1">
+                <h1 class="h1 section-text-title">{{ block.heading }}</h1>
+                <p class="p section-text-intro">{{ block.intro }}</p>
+                <p class="p section-text-body">{{ block.body }}</p>
+            </div>
+        {% endif %}
+
+    </div>
+
+</section>

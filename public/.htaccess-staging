@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Remove the www from the URL
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+    # Exclude root files
+    RewriteCond $1 !^(favicon\.ico|favicon\.png|fb_share\.jpg|apple-touch-icon\.png|apple-touch-icon-precomposed\.png|index\.php|robots\.txt) [NC]
+
+    # Exclude asset folders
+    RewriteCond $1 !^(content|static|assets|uploads)/ [NC]
+
+    # Remove index.php
+    RewriteRule ^(.*)$ /index.php/$1 [L]
+</IfModule>
+
+
+AuthName "Restricted area"
+AuthUserFile /data/web/superhero/staging.studiokraftwerk.d.shcc.nl/.htpasswd
+AuthGroupFile /dev/null
+AuthType Basic
+
+require valid-user

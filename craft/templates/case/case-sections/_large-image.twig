@@ -1,0 +1,11 @@
+<section class="section section-large-image section-padding-top--{{ block.paddingTop }} section-padding-bottom--{{ block.paddingBottom }}" style="background-color: {{ block.backgroundColor }}; {% if (block.backgroundImage.first()) %} background-image: url({{ block.backgroundImage.first().url }}) {% endif %}">
+
+    {% include "partials/_ui-overlay" with {color: block.uiColor, title: "work / #{entry.title}"} %}
+
+    <div class="grid">
+        <div class="column span-8-10 gutter-l-1-10 span-sm-8-10 gutter-l-sm-1-10 section-large-image-column">
+            <img src="{{ block.image.first().url }}" class="section-large-image-image" data-animation-offset="0">
+        </div>
+    </div>
+
+</section>

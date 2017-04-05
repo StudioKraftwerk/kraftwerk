@@ -1,0 +1,26 @@
+{% if entry.type == "case" %}
+    <script type="text/template" id="{{ entry.uri }}">
+        {% include 'case/_entry' with { hasLayout: false } %}
+    </script>
+{% endif %}
+
+<!-- Pages -->
+<script type="text/template" id="pages/intro">
+    {% include "pages/_intro" %}
+</script>
+
+<script type="text/template" id="pages/case">
+    {% include "pages/_case" %}
+</script>
+
+<script type="text/template" id="pages/work">
+    {% include "pages/_work" %}
+</script>
+
+<script type="text/template" id="pages/about">
+    {% include "pages/_about" %}
+</script>
+
+<script type="text/template" id="pages/contact">
+    {% include "pages/_contact" %}
+</script>

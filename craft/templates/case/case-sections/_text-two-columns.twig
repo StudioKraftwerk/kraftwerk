@@ -1,0 +1,15 @@
+<section class="section section-text section-text-two-columns section-padding-top--{{ block.paddingTop }} section-padding-bottom--{{ block.paddingBottom }}" style="color: {{ block.textColor }}; background-color: {{ block.backgroundColor }}; {% if (block.backgroundImage.first()) %} background-image: url({{ block.backgroundImage.first().url }}) {% endif %}">
+
+    {% include "partials/_ui-overlay" with {color: block.uiColor, title: "work / #{entry.title}"} %}
+
+    <div class="grid">
+        <div class="column section-text-two-columns-column-left span-3-10 gutter-l-2-10 span-md-4-10 gutter-l-md-1-10 span-sm-8-10 gutter-l-sm-1-10">
+            <h1 class="h1 section-text-title" data-animation-offset="0">{{ block.heading }}</h1>
+        </div>
+        <div class="column section-text-two-columns-column-right span-4-10 span-md-4-10 span-sm-8-10 gutter-l-sm-1-10">
+            <p class="p section-text-intro" data-animation-offset="0.1">{{ block.intro }}</p>
+            <p class="p section-text-body" data-animation-offset="0.2">{{ block.body }}</p>
+        </div>
+    </div>
+
+</section>

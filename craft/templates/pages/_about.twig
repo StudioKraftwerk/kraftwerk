@@ -1,0 +1,230 @@
+{% set entry = craft.entries.section('about').first() %}
+
+<div class="page-about-background"></div>
+
+{% include "partials/_ui-overlay" with {color: 'white', title: 'About'} %}
+
+<div class="scroll-snap">
+
+    <section class="section section-about js-section-first" data-id="0" data-snap data-snap-mobile>
+        <div class="grid grid-about center">
+            <img src="/static/img/backgrounds/about-header.png" class="section-about-background-image section-about-background-image--header">
+            <div class="column span-8-10 gutter-l-1-10 gutter-r-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h1 class="h1 page-title page-title--about">We are not that band from Germany</h1>
+                <div class="grid grid-about-paragraph center">
+                    <div class="column span-4-10 gutter-l-1-10">
+                        <p class="p section-about-paragraph section-about-paragraph--top">We are a team of designers, creatives and strategists who believe that technology needs creativity and craft to deliver human experiences that seamlessly integrate into people’s daily life.</p>
+                    </div>
+                    <div class="column span-4-10 gutter-r-1-10 gutter-r-sm-1-10">
+                        <p class="p section-about-paragraph">That’s why we craft digital products that are both useful and desirable.  For smart brands that fully embrace insight driven design to create better customer relationships and new revenue streams.</p>
+                    </div>
+                </div>
+                <div class="column section-about-sidenote">
+                    <span class="span section-about-sidenote-content">If you really insist on seeing that German band, you can find them <a class="page-sidenote__link" href="http://kraftwerk.com/" target="_blank">here</a>.</span>
+                </div>
+            </div>
+        </div>
+        <a class="button-bare button-scroll-down"><canvas width="100" height="160" class="sprite-animation sprite-animation-arrow" data-direction="down" data-loop="true"></canvas></a>
+    </section>
+
+    <!--
+    <section class="section section-about" data-id="1" data-snap data-snap-mobile="false">
+        <img src="/static/img/backgrounds/about-section.png" class="section-about-background-image section-about-background-image--section">
+        <div class="grid grid-about center-text center">
+            <div class="column span-6-10 gutter-l-2-10 gutter-r-2-10 span-md-8-10 gutter-l-md-1-10 gutter-r-md-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h1 class="h1 section-about-title section-about-title--full-width" data-animation-offset="0">What we do</h1>
+                <p class="section-about-copy-intro section-about-copy-intro--full-width" data-animation-offset="0.1">We quickly bring ideas to life with tangible prototypes, and refine until the very last moment in close collaboration with our clients.</p>
+
+                <ul class="list list--services is-horizontal" data-animation-offset="0.2">
+                    <li class="list-item list-item--services">Creative direction</li>
+                    <li class="list-item list-item--services">Visual design</li>
+                    <li class="list-item list-item--services">Service design</li>
+                    <li class="list-item list-item--services">Art direction</li>
+                    <li class="list-item list-item--services">UX design</li>
+                    <li class="list-item list-item--services">Brand identity</li>
+                    <li class="list-item list-item--services">Concepting</li>
+                    <li class="list-item list-item--services">Interaction design</li>
+                    <li class="list-item list-item--services">Design systems</li>
+                    <li class="list-item list-item--services">Strategy</li>
+                    <li class="list-item list-item--services">Digital experiences</li>
+                    <li class="list-item list-item--services">Consulting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <section class="section section-about section-about--mobile about-section-vision" data-id="1" data-snap data-snap-mobile="false">
+        <div class="grid grid-about center">
+            <div class="column span-4-10 gutter-l-2-10 gutter-r-4-10 span-md-5-10 gutter-l-md-1-10 gutter-r-md-4-10 span-sm-7-10 gutter-l-sm-2-10 gutter-r-sm-1-10">
+                <img src="/static/img/backgrounds/about-eye.png" class="section-about-background-image section-about-background-image--eye">
+                <h1 class="h1 section-about-title" data-animation-offset="0">Products with a mission</h1>
+                {# <span class="section-about-label-container" data-animation-offset="0.1"><span class="section-about-label">Utility</span></span> #}
+
+                <p class="section-about-copy-intro" data-animation-offset="0.2">Digital products are more than functional solutions to practical problems. They need creativity and strategy to be strongly embedded in a brand’s mission. We help brands prove their story through meaningful experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-about section-about--mobile about-section-kraftmanship" data-id="2" data-snap data-snap-mobile="false">
+        <div class="grid grid-about center">
+            <div class="column span-4-10 gutter-l-5-10 gutter-r-1-10 span-md-5-10 gutter-l-md-4-10 gutter-r-md-1-10 span-sm-7-10 gutter-l-sm-2-10 gutter-r-sm-1-10">
+                <img src="/static/img/backgrounds/about-hand.png" class="section-about-background-image section-about-background-image--hand">
+                <h1 class="h1 section-about-title section-about-title--usability" data-animation-offset="0">Tested on real humans</h1>
+                {# <span class="section-about-label-container" data-animation-offset="0.1"><span class="section-about-label">Usability</span></span> #}
+
+                <p class="section-about-copy-intro" data-animation-offset="0.2">We craft prototypes of key user journeys in order to validate and optimise as soon as possible. The high fidelity prototypes we deliver speed up development radically while ensuring the best possible user experiences.</p>
+                <!-- <p class="p section-about-copy-paragraph" data-animation-offset="0.3">We quickly bring ideas to life with tangible prototypes, and refine until the very last moment in close collaboration with our clients.</p> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-about section-about--mobile about-section-heritage" data-id="3" data-snap data-snap-mobile="false">
+        <div class="grid grid-about center">
+            <div class="column span-4-10 gutter-l-2-10 gutter-r-4-10 span-md-5-10 gutter-l-md-1-10 gutter-r-md-4-10 span-sm-7-10 gutter-l-sm-2-10 gutter-r-sm-1-10">
+                <img src="/static/img/backgrounds/about-lighting.png" class="section-about-background-image section-about-background-image--lighting">
+                <h1 class="h1 section-about-title" data-animation-offset="0">Turn users into addicts</h1>
+                {# <span class="section-about-label-container" data-animation-offset="0.1"><span class="section-about-label">Desirability</span></span> #}
+
+                <p class="section-about-copy-intro" data-animation-offset="0.2">Rewarding experiences are the way to ongoing customer relationships. That’s why we bring creativity & craft to the table. Addictive digital products are built with original features, creative communication and surprising interactions.</p>
+               <!-- <p class="p section-about-copy-paragraph" data-animation-offset="0.3">ACHTUNG! &amp; Kraftwerk are part of the international Dentsu/mcgarrybowen network.</p> -->
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section class="section section-about setion-about--mobile about-section-join" data-id="5" data-snap>
+        <div class="grid grid-about center-text center">
+            <div class="column">
+                <div class="column span-6-10 gutter-l-2-10 gutter-r-2-10 span-md-8-10 gutter-l-md-1-10 gutter-r-md-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                    <h1 class="h1 section-about-title section-about-title--full-width">Join our team</h1>
+                    <p class="section-about-copy-intro section-about-copy-intro--full-width">We are always looking for new talent. Are you up for the challenge? Come over for a cup of coffee and show us what you got.</p>
+                </div>
+                <div class="column span-2-10 span-sm-2-10 about-section-join-column about-section-join-title">
+                    <ul class="list">
+                        <li class="list-item">Art Director</li>
+                        <li class="list-item">Creative Director</li>
+                        <li class="list-item">UX Designer</li>
+                        <li class="list-item">Creative Intern</li>
+                    </ul>
+                </div>
+                <div class="column span-3-10 span-sm-2-10 about-section-join-column about-section-join-year">
+                    <ul class="list">
+                        <li class="list-item">2016</li>
+                        <li class="list-item">2015</li>
+                        <li class="list-item">2015</li>
+                        <li class="list-item">2014</li>
+                    </ul>
+                </div>
+                <div class="column span-sm-2-10 about-section-join-column about-section-join-apply">
+                    <ul class="list">
+                        <li class="list-item"><a href="/" target="_blank">Apply</a></li>
+                        <li class="list-item"><a href="/" target="_blank">Apply</a></li>
+                        <li class="list-item"><a href="/" target="_blank">Apply</a></li>
+                        <li class="list-item"><a href="/" target="_blank">Apply</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <section class="section section-about section-about--mobile section-about-picture" data-id="4" data-snap data-snap-mobile="false">
+        <img src="/static/img/backgrounds/about-section.png" class="section-about-background-image section-about-background-image--section">
+        <div class="grid grid-about">
+            <span class="section-indicator-title">The Office</span>
+            <div class="column column-about-picture span-8-10 gutter-l-1-10 gutter-r-1-10 span-sm-10-10">
+                <img src="{{siteUrl}}static/img/office/office-3.jpg" alt="office" class="office-image office-image-3" data-animation-offset="0">
+                <img src="{{siteUrl}}static/img/office/office-2.jpg" alt="office" class="office-image office-image-2" data-animation-offset="0.1">
+                <img src="{{siteUrl}}static/img/office/office-1.jpg" alt="office" class="office-image office-image-1" data-animation-offset="0.3">
+
+                <span class="outline-block-office" data-animation-offset="0.2"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-about" data-id="5" data-snap data-snap-mobile>
+        <img src="/static/img/backgrounds/about-section.png" class="section-about-background-image section-about-background-image--section">
+        <div class="grid grid-about center-text center">
+            <div class="column span-8-10 gutter-l-1-10 gutter-r-1-10 span-sm-8-10 gutter-l-sm-1-10 gutter-r-sm-1-10">
+                <h1 class="h1 section-about-title section-about-title--full-width" data-animation-offset="0.1">Who we <span class="section-about-title-specification">work for</span></h1>
+
+                <div class="clients"  data-animation-offset="0.2">
+                    <ul class="list list--clients is-horizontal">
+                        {% for logo in craft.entries.section('about').first().logos %}
+                            <li class="list-item list-item--clients"><img src="{{ logo.url }}" class="client-image"></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <a class="button-bare button-totop"><i class="icon arrow-up"></i>Back to top</a>
+    </section>
+
+</div>
+
+<div class="section-indicator">
+    <ul class="section-indicator-list">
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="0">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Intro</span>
+            </a>
+        </li>
+       <!--
+       <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="1">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">What&nbsp;we&nbsp;do</span>
+            </a>
+        </li>
+        -->
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="1">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Products&nbsp;with&nbsp;a&nbsp;mission</span>
+            </a>
+        </li>
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="2">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Tested&nbsp;on&nbsp;real&nbsp;humans</span>
+            </a>
+        </li>
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="3">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Turn&nbsp;users&nbsp;into&nbsp;addicts</span>
+            </a>
+        </li>
+        <!--
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="5">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Join our team</span>
+            </a>
+        </li>
+        -->
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="4">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">The&nbsp;office</span>
+            </a>
+        </li>
+        <li class="list-item list-item-section-indicator">
+            <a class="button section-indicator-button" data-id="5">
+                <span class="dot section-indicator-dot section-indicator-dot-normal"></span>
+                <span class="dot section-indicator-dot section-indicator-dot-pulse"></span>
+                <span class="label section-indicator-label">Who&nbsp;we&nbsp;work&nbsp;for</span>
+            </a>
+        </li>
+    </ul>
+</div>

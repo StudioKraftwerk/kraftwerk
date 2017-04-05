@@ -1,0 +1,25 @@
+{% extends "layouts/index" %}
+
+{% block content %}
+    {% for block in entry.caseSections %}
+        {% switch block.type %}
+            {% case "textFullWidth" %}
+                {% include "case/case-sections/_text-full-width" %}
+            {% case "largeImage" %}
+                {% include "case/case-sections/_large-image" %}
+            {% case "imageFull" %}
+                {% include "case/case-sections/_image-full" %}
+            {% case "textTwoColumns" %}
+                {% include "case/case-sections/_text-two-columns" %}
+            {% case "video" %}
+                {% include "case/case-sections/_video" %}
+            {% case "textWithImage" %}
+                {% include "case/case-sections/_text-with-image" %}
+            {% case "imageGallery" %}
+                {% include "case/case-sections/_image-gallery" %}
+        {% endswitch %}
+    {% endfor %}
+
+    {% include "case/case-sections/_metadata" %}
+    {% include "case/case-sections/_footer" %}
+{% endblock %}

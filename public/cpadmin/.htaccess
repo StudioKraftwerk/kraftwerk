@@ -1,0 +1,5 @@
+AuthName "Authorization required"
+AuthType Basic
+<LIMIT GET PUT>
+require user achtung
+</LIMIT>
